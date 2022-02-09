@@ -1,0 +1,38 @@
+{
+  "name": "desaianand1.github.io",
+  "version": "0.1.0",
+  "description": "My personal website, idk.",
+  "scripts": {
+    "start": "npm-run-all --parallel watch:eleventy watch:parcel",
+    "watch:eleventy": "npx @11ty/eleventy --watch",
+    "watch:parcel": "run-p watch:css watch:js watch:images",
+    "watch:css": "parcel watch --port=8081 src/css/**/*.css",
+    "watch:js": "parcel watch src/js/**/*.js",
+    "watch:images": "parcel watch src/images/*",
+    "build": "run-s clean build:svg prod:*",
+    "prod:eleventy": "npx @11ty/eleventy",
+    "prod:parcel": "run-p build:css build:js build:images",
+    "build:svg": "svg-sprite --config .svg-sprite-config.json src/svg/**/*.svg",
+    "build:css": "parcel build src/css/**/*.css",
+    "build:js": "parcel build src/js/**/*.js",
+    "build:images": "parcel build src/images/*",
+    "clean": "rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desaianand1/desaianand1.github.io.git"
+  },
+  "author": "Anand Desai",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/desaianand1/desaianand1.github.io/issues"
+  },
+  "homepage": "https://github.com/desaianand1/desaianand1.github.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.2.1",
+    "prettier": "^2.5.1",
+    "svg-sprite": "^1.5.4"
+  }
+}

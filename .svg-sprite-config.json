@@ -1,0 +1,12 @@
+{
+    "dest": "src/",
+    "log": "info",
+    "mode": {
+        "css": {
+            "sprite": "sprite/sprite.css.svg",
+            "render": {
+                "css": true
+            }
+        }
+    }
+}
